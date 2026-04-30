@@ -1,0 +1,1402 @@
+   MK-SW   Switch>en
+   MK-SW   Switch#conf t
+   MK-SW   Switch(config)#hostname SM-SW
+   MK-SW   SM-SW(config)#line console 0
+   MK-SW   SM-SW(config-line)#password cisco
+   MK-SW   SM-SW(config-line)#login
+   MK-SW   SM-SW(config-line)#exec-timeout 3 0
+   MK-SW   SM-SW(config-line)#logging synchronous 
+   MK-SW   SM-SW(config-line)#exit
+   MK-SW   SM-SW(config)#enable password cisco
+   MK-SW   SM-SW(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   MK-SW   SM-SW(config)#no ip domain-lookup 
+   MK-SW   SM-SW(config)#service password-encryption 
+   MK-SW   SM-SW(config)#username cisco password cisco
+   MK-SW   SM-SW(config)#ip domain-name cisco.com
+   MK-SW   SM-SW(config)#crypto key generate rsa general-keys modulus 1024
+   MK-SW   SM-SW(config)#ip ssh version 2
+   MK-SW   SM-SW(config)#line vty 0 15
+   MK-SW   SM-SW(config-line)#login local 
+   MK-SW   SM-SW(config-line)#transport input ssh
+   MK-SW   SM-SW(config-line)#exit
+   MK-SW   SM-SW(config)#do wr
+   MK-SW   SM-SW(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   MK-SW   SM-SW(config)#access-list 1 deny ?
+   MK-SW   SM-SW(config)#access-list 1 deny any 
+   MK-SW   SM-SW(config)#line vty 0 15
+   MK-SW   SM-SW(config-line)#access-class 1 in ?
+   MK-SW   SM-SW(config-line)#access-class 1 in 
+   MK-SW   SM-SW(config-line)#exit
+   MK-SW   SM-SW(config)#do wr
+   HR-SW   Switch>en
+   HR-SW   Switch#conf t
+   HR-SW   Switch(config)#hostname HL-SW
+   HR-SW   HL-SW(config)#line console 0
+   HR-SW   HL-SW(config-line)#password cisco
+   HR-SW   HL-SW(config-line)#login
+   HR-SW   HL-SW(config-line)#logging synchronous
+   HR-SW   HL-SW(config-line)#exec-timeout 3 0
+   HR-SW   HL-SW(config-line)#exit
+   HR-SW   HL-SW(config)#enable password cisco
+   HR-SW   HL-SW(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   HR-SW   HL-SW(config)#no ip domain-lookup
+   HR-SW   HL-SW(config)#service password-encryption
+   HR-SW   HL-SW(config)#username cisco password cisco
+   HR-SW   HL-SW(config)#ip domain-name cisco.com
+   HR-SW   HL-SW(config)#crypto key generate rsa general-keys modulus 1024
+   HR-SW   HL-SW(config)#ip ssh version 2
+   HR-SW   HL-SW(config)#line vty 0 15
+   HR-SW   HL-SW(config-line)#login local
+   HR-SW   HL-SW(config-line)#transport input ssh
+   HR-SW   HL-SW(config-line)#exit
+   HR-SW   HL-SW(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   HR-SW   HL-SW(config)#access-list 1 deny any
+   HR-SW   HL-SW(config)#line vty 0 15
+   HR-SW   HL-SW(config-line)#access-class 1 in
+   HR-SW   HL-SW(config-line)#exit
+   HR-SW   HL-SW(config)#do wr
+   FIN-SW   Switch>en
+   FIN-SW   Switch#conf t
+   FIN-SW   Switch(config)#hostname FA-SW
+   FIN-SW   FA-SW(config)#line console 0
+   FIN-SW   FA-SW(config-line)#password cisco
+   FIN-SW   FA-SW(config-line)#login
+   FIN-SW   FA-SW(config-line)#logging synchronous
+   FIN-SW   FA-SW(config-line)#exec-timeout 3 0
+   FIN-SW   FA-SW(config-line)#exit
+   FIN-SW   FA-SW(config)#enable password cisco
+   FIN-SW   FA-SW(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   FIN-SW   FA-SW(config)#no ip domain-lookup
+   FIN-SW   FA-SW(config)#service password-encryption
+   FIN-SW   FA-SW(config)#username cisco password cisco
+   FIN-SW   FA-SW(config)#ip domain-name cisco.com
+   FIN-SW   FA-SW(config)#crypto key generate rsa general-keys modulus 1024
+   FIN-SW   FA-SW(config)#ip ssh version 2
+   FIN-SW   FA-SW(config)#line vty 0 15
+   FIN-SW   FA-SW(config-line)#login local
+   FIN-SW   FA-SW(config-line)#transport input ssh
+   FIN-SW   FA-SW(config-line)#exit
+   FIN-SW   FA-SW(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   FIN-SW   FA-SW(config)#access-list 1 deny any
+   FIN-SW   FA-SW(config)#line vty 0 15
+   FIN-SW   FA-SW(config-line)#access-class 1 in
+   FIN-SW   FA-SW(config-line)#exit
+   FIN-SW   FA-SW(config)#do wr
+   ADMIN-SW   Switch>en
+   ADMIN-SW   Switch#conf t
+   ADMIN-SW   Switch(config)#hostname ADM-SW
+   ADMIN-SW   ADM-SW(config)#line console 0
+   ADMIN-SW   ADM-SW(config-line)#password cisco
+   ADMIN-SW   ADM-SW(config-line)#login
+   ADMIN-SW   ADM-SW(config-line)#logging synchronous
+   ADMIN-SW   ADM-SW(config-line)#exec-timeout 3 0
+   ADMIN-SW   ADM-SW(config-line)#exit
+   ADMIN-SW   ADM-SW(config)#enable password cisco
+   ADMIN-SW   ADM-SW(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   ADMIN-SW   ADM-SW(config)#no ip domain-lookup
+   ADMIN-SW   ADM-SW(config)#service password-encryption
+   ADMIN-SW   ADM-SW(config)#username cisco password cisco
+   ADMIN-SW   ADM-SW(config)#ip domain-name cisco.com
+   ADMIN-SW   ADM-SW(config)#crypto key generate rsa general-keys modulus 1024
+   ADMIN-SW   ADM-SW(config)#ip ssh version 2
+   ADMIN-SW   ADM-SW(config)#line vty 0 15
+   ADMIN-SW   ADM-SW(config-line)#login local
+   ADMIN-SW   ADM-SW(config-line)#transport input ssh
+   ADMIN-SW   ADM-SW(config-line)#exit
+   ADMIN-SW   ADM-SW(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   ADMIN-SW   ADM-SW(config)#access-list 1 deny any
+   ADMIN-SW   ADM-SW(config)#line vty 0 15
+   ADMIN-SW   ADM-SW(config-line)#access-class 1 in
+   ADMIN-SW   ADM-SW(config-line)#exit
+   ADMIN-SW   ADM-SW(config)#do wr
+   ICT-SW   Switch>en
+   ICT-SW   Switch#conf t
+   ICT-SW   Switch(config)#hostname ICT-SW
+   ICT-SW   ICT-SW(config)#line console 0
+   ICT-SW   ICT-SW(config-line)#password cisco
+   ICT-SW   ICT-SW(config-line)#login
+   ICT-SW   ICT-SW(config-line)#logging synchronous
+   ICT-SW   ICT-SW(config-line)#exec-timeout 3 0
+   ICT-SW   ICT-SW(config-line)#exit
+   ICT-SW   ICT-SW(config)#enable password cisco
+   ICT-SW   ICT-SW(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   ICT-SW   ICT-SW(config)#no ip domain-lookup
+   ICT-SW   ICT-SW(config)#service password-encryption
+   ICT-SW   ICT-SW(config)#username cisco password cisco
+   ICT-SW   ICT-SW(config)#ip domain-name cisco.com
+   ICT-SW   ICT-SW(config)#crypto key generate rsa general-keys modulus 1024
+   ICT-SW   ICT-SW(config)#ip ssh version 2
+   ICT-SW   ICT-SW(config)#line vty 0 15
+   ICT-SW   ICT-SW(config-line)#login local
+   ICT-SW   ICT-SW(config-line)#transport input ssh
+   ICT-SW   ICT-SW(config-line)#exit
+   ICT-SW   ICT-SW(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   ICT-SW   ICT-SW(config)#access-list 1 deny any
+   ICT-SW   ICT-SW(config)#line vty 0 15
+   ICT-SW   ICT-SW(config-line)#access-class 1 in
+   ICT-SW   ICT-SW(config-line)#exit
+   ICT-SW   ICT-SW(config)#do wr
+   SERVER-SW   Switch>en
+   SERVER-SW   Switch#conf t
+   SERVER-SW   Switch(config)#hostname SVR-SW
+   SERVER-SW   SVR-SW(config)#line console 0
+   SERVER-SW   SVR-SW(config-line)#password cisco
+   SERVER-SW   SVR-SW(config-line)#login
+   SERVER-SW   SVR-SW(config-line)#logging synchronous
+   SERVER-SW   SVR-SW(config-line)#exec-timeout 3 0
+   SERVER-SW   SVR-SW(config-line)#exit
+   SERVER-SW   SVR-SW(config)#enable password cisco
+   SERVER-SW   SVR-SW(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   SERVER-SW   SVR-SW(config)#no ip domain-lookup
+   SERVER-SW   SVR-SW(config)#service password-encryption
+   SERVER-SW   SVR-SW(config)#username cisco password cisco
+   SERVER-SW   SVR-SW(config)#ip domain-name cisco.com
+   SERVER-SW   SVR-SW(config)#crypto key generate rsa general-keys modulus 1024
+   SERVER-SW   SVR-SW(config)#ip ssh version 2
+   SERVER-SW   SVR-SW(config)#line vty 0 15
+   SERVER-SW   SVR-SW(config-line)#login local
+   SERVER-SW   SVR-SW(config-line)#transport input ssh
+   SERVER-SW   SVR-SW(config-line)#exit
+   SERVER-SW   SVR-SW(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   SERVER-SW   SVR-SW(config)#access-list 1 deny any
+   SERVER-SW   SVR-SW(config)#line vty 0 15
+   SERVER-SW   SVR-SW(config-line)#access-class 1 in
+   SERVER-SW   SVR-SW(config-line)#exit
+   SERVER-SW   SVR-SW(config)#do wr
+   DMZ-SW   Switch>en
+   DMZ-SW   Switch#conf t
+   DMZ-SW   Switch(config)#hostname DMZ-SW
+   DMZ-SW   DMZ-SW(config)#line console 0
+   DMZ-SW   DMZ-SW(config-line)#password cisco
+   DMZ-SW   DMZ-SW(config-line)#login
+   DMZ-SW   DMZ-SW(config-line)#logging synchronous
+   DMZ-SW   DMZ-SW(config-line)#exec-timeout 3 0
+   DMZ-SW   DMZ-SW(config-line)#exit
+   DMZ-SW   DMZ-SW(config)#enable password cisco
+   DMZ-SW   DMZ-SW(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   DMZ-SW   DMZ-SW(config)#no ip domain-lookup
+   DMZ-SW   DMZ-SW(config)#service password-encryption
+   DMZ-SW   DMZ-SW(config)#username cisco password cisco
+   DMZ-SW   DMZ-SW(config)#ip domain-name cisco.com
+   DMZ-SW   DMZ-SW(config)#crypto key generate rsa general-keys modulus 1024
+   DMZ-SW   DMZ-SW(config)#ip ssh version 2
+   DMZ-SW   DMZ-SW(config)#line vty 0 15
+   DMZ-SW   DMZ-SW(config-line)#login local
+   DMZ-SW   DMZ-SW(config-line)#transport input ssh
+   DMZ-SW   DMZ-SW(config-line)#exit
+   DMZ-SW   DMZ-SW(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   DMZ-SW   DMZ-SW(config)#access-list 1 deny any
+   DMZ-SW   DMZ-SW(config)#line vty 0 15
+   DMZ-SW   DMZ-SW(config-line)#access-class 1 in
+   DMZ-SW   DMZ-SW(config-line)#exit
+   DMZ-SW   DMZ-SW(config)#do wr
+   CORE-SW1   Switch>en
+   CORE-SW1   Switch#conf t
+   CORE-SW1   Switch(config)#hostname CORE-SW1
+   CORE-SW1   CORE-SW1(config)#line console 0
+   CORE-SW1   CORE-SW1(config-line)#password cisco
+   CORE-SW1   CORE-SW1(config-line)#login
+   CORE-SW1   CORE-SW1(config-line)#logging synchronous
+   CORE-SW1   CORE-SW1(config-line)#exec-timeout 3 0
+   CORE-SW1   CORE-SW1(config-line)#exit
+   CORE-SW1   CORE-SW1(config)#enable password cisco
+   CORE-SW1   CORE-SW1(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   CORE-SW1   CORE-SW1(config)#no ip domain-lookup
+   CORE-SW1   CORE-SW1(config)#service password-encryption
+   CORE-SW1   CORE-SW1(config)#username cisco password cisco
+   CORE-SW1   CORE-SW1(config)#ip domain-name cisco.com
+   CORE-SW1   CORE-SW1(config)#crypto key generate rsa general-keys modulus 1024
+   CORE-SW1   CORE-SW1(config)#ip ssh version 2
+   CORE-SW1   CORE-SW1(config)#line vty 0 15
+   CORE-SW1   CORE-SW1(config-line)#login local
+   CORE-SW1   CORE-SW1(config-line)#transport input ssh
+   CORE-SW1   CORE-SW1(config-line)#exit
+   CORE-SW1   CORE-SW1(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   CORE-SW1   CORE-SW1(config)#access-list 1 deny any
+   CORE-SW1   CORE-SW1(config)#line vty 0 15
+   CORE-SW1   CORE-SW1(config-line)#access-class 1 in
+   CORE-SW1   CORE-SW1(config-line)#exit
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW2   Switch>en
+   CORE-SW2   Switch#conf t
+   CORE-SW2   Switch(config)#hostname CORE-SW2
+   CORE-SW2   CORE-SW2(config)#line console 0
+   CORE-SW2   CORE-SW2(config-line)#password cisco
+   CORE-SW2   CORE-SW2(config-line)#login
+   CORE-SW2   CORE-SW2(config-line)#logging synchronous
+   CORE-SW2   CORE-SW2(config-line)#exec-timeout 3 0
+   CORE-SW2   CORE-SW2(config-line)#exit
+   CORE-SW2   CORE-SW2(config)#enable password cisco
+   CORE-SW2   CORE-SW2(config)#banner motd &NO UNAUTHORISED ACCESS!!!&
+   CORE-SW2   CORE-SW2(config)#no ip domain-lookup
+   CORE-SW2   CORE-SW2(config)#service password-encryption
+   CORE-SW2   CORE-SW2(config)#username cisco password cisco
+   CORE-SW2   CORE-SW2(config)#ip domain-name cisco.com
+   CORE-SW2   CORE-SW2(config)#crypto key generate rsa general-keys modulus 1024
+   CORE-SW2   CORE-SW2(config)#ip ssh version 2
+   CORE-SW2   CORE-SW2(config)#line vty 0 15
+   CORE-SW2   CORE-SW2(config-line)#login local
+   CORE-SW2   CORE-SW2(config-line)#transport input ssh
+   CORE-SW2   CORE-SW2(config-line)#exit
+   CORE-SW2   CORE-SW2(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   CORE-SW2   CORE-SW2(config)#access-list 1 deny any
+   CORE-SW2   CORE-SW2(config)#line vty 0 15
+   CORE-SW2   CORE-SW2(config-line)#access-class 1 in
+   CORE-SW2   CORE-SW2(config-line)#exit
+   CORE-SW2   CORE-SW2(config)#do wr
+   MK-SW   SM-SW>enable
+   MK-SW   SM-SW#configure terminal
+   MK-SW   SM-SW(config)#interface FastEthernet0/7
+   MK-SW   SM-SW(config-if)#exit
+   MK-SW   SM-SW(config)#interface FastEthernet0/5
+   MK-SW   SM-SW(config-if)#EXIT
+   MK-SW   SM-SW(config)#int range fa0/1-2
+   MK-SW   SM-SW(config-if-range)#switchport mode trunk 
+   MK-SW   SM-SW(config-if-range)#ex
+   MK-SW   SM-SW(config)#vlan 10
+   MK-SW   SM-SW(config-vlan)#name MGT
+   MK-SW   SM-SW(config-vlan)#VLAN 20
+   MK-SW   SM-SW(config-vlan)#NAME LAN
+   MK-SW   SM-SW(config-vlan)#VLAN 50
+   MK-SW   SM-SW(config-vlan)#NAME WLAN
+   MK-SW   SM-SW(config-vlan)#VLAN 70
+   MK-SW   SM-SW(config-vlan)#NAME VOIP
+   MK-SW   SM-SW(config-vlan)#VLAN 199
+   MK-SW   SM-SW(config-vlan)#NAME BLACKHOLE
+   MK-SW   SM-SW(config-vlan)#EX
+   MK-SW   SM-SW>enable
+   MK-SW   SM-SW#configure terminal
+   MK-SW   SM-SW(config)#interface FastEthernet0/5
+   MK-SW   SM-SW(config-if)#ex
+   MK-SW   SM-SW(config)#int range fa0/3-4
+   MK-SW   SM-SW(config-if-range)#switchport mode access 
+   MK-SW   SM-SW(config-if-range)#switchport access vlan 20
+   MK-SW   SM-SW(config-if-range)#ex
+   MK-SW   SM-SW(config)#int range fa0/5-6
+   MK-SW   SM-SW(config-if-range)#switchport mode access 
+   MK-SW   SM-SW(config-if-range)#switchport access vlan 70
+   MK-SW   SM-SW(config-if-range)#ex
+   MK-SW   SM-SW(config)#int fa0/7
+   MK-SW   SM-SW(config-if)#switchport mode access 
+   MK-SW   SM-SW(config-if)#switchport access vlan 50
+   MK-SW   SM-SW(config-if)#ex
+   MK-SW   SM-SW(config)#int range fa0/8-24, gig0/1-2
+   MK-SW   SM-SW(config-if-range)#switchport mode access 
+   MK-SW   SM-SW(config-if-range)#switchport access vlan 199
+   MK-SW   SM-SW(config-if-range)#shut
+   MK-SW   SM-SW(config-if-range)#ex
+   MK-SW   SM-SW(config)#do wr
+   HR-SW   HL-SW>enable
+   HR-SW   HL-SW#configure terminal
+   HR-SW   HL-SW(config)#interface FastEthernet0/4
+   HR-SW   HL-SW(config-if)#ex
+   HR-SW   HL-SW(config)#int range fa0/1-2
+   HR-SW   HL-SW(config-if-range)#switchport mode trunk 
+   HR-SW   HL-SW(config-if-range)#exit
+   HR-SW   HL-SW(config)#vlan 10
+   HR-SW   HL-SW(config-vlan)#name MGT
+   HR-SW   HL-SW(config-vlan)#VLAN 20
+   HR-SW   HL-SW(config-vlan)#NAME LAN
+   HR-SW   HL-SW(config-vlan)#VLAN 50
+   HR-SW   HL-SW(config-vlan)#NAME WLAN
+   HR-SW   HL-SW(config-vlan)#VLAN 70
+   HR-SW   HL-SW(config-vlan)#NAME VOIP
+   HR-SW   HL-SW(config-vlan)#VLAN 199
+   HR-SW   HL-SW(config-vlan)#NAME BLACKHOLE
+   HR-SW   HL-SW(config-vlan)#EXIT
+   HR-SW   HL-SW(config)#int range fa0/3-4
+   HR-SW   HL-SW(config-if-range)#switchport mode access
+   HR-SW   HL-SW(config-if-range)#switchport access vlan 20
+   HR-SW   HL-SW(config-if-range)#exit
+   HR-SW   HL-SW(config)#int range fa0/5-6
+   HR-SW   HL-SW(config-if-range)#switchport mode access
+   HR-SW   HL-SW(config-if-range)#switchport access vlan 70
+   HR-SW   HL-SW(config-if-range)#exit
+   HR-SW   HL-SW(config)#int fa0/7
+   HR-SW   HL-SW(config-if)#switchport mode access
+   HR-SW   HL-SW(config-if)#switchport access vlan 50
+   HR-SW   HL-SW(config-if)#exit
+   HR-SW   HL-SW(config)#int range fa0/8-24, gig0/1-2
+   HR-SW   HL-SW(config-if-range)#switchport mode access
+   HR-SW   HL-SW(config-if-range)#switchport access vlan 199
+   HR-SW   HL-SW(config-if-range)#exit
+   HR-SW   HL-SW(config)#do wr
+   HR-SW   HL-SW(config)#int range fa0/8-24, gig0/1-2
+   HR-SW   HL-SW(config-if-range)#shut
+   HR-SW   HL-SW(config-if-range)#do wr
+   FIN-SW   FA-SW>enable
+   FIN-SW   FA-SW#configure terminal
+   FIN-SW   FA-SW(config)#interface FastEthernet0/5
+   FIN-SW   FA-SW(config-if)#ex
+   FIN-SW   FA-SW(config)#int range fa0/1-2
+   FIN-SW   FA-SW(config-if-range)#switchport mode trunk 
+   FIN-SW   FA-SW(config-if-range)#exit
+   FIN-SW   FA-SW(config)#vlan 10
+   FIN-SW   FA-SW(config-vlan)#name MGT
+   FIN-SW   FA-SW(config-vlan)#VLAN 20
+   FIN-SW   FA-SW(config-vlan)#NAME LAN
+   FIN-SW   FA-SW(config-vlan)#VLAN 50
+   FIN-SW   FA-SW(config-vlan)#NAME WLAN
+   FIN-SW   FA-SW(config-vlan)#VLAN 70
+   FIN-SW   FA-SW(config-vlan)#NAME VOIP
+   FIN-SW   FA-SW(config-vlan)#VLAN 199
+   FIN-SW   FA-SW(config-vlan)#NAME BLACKHOLE
+   FIN-SW   FA-SW(config-vlan)#EXIT
+   FIN-SW   FA-SW(config)#int range fa0/3-4
+   FIN-SW   FA-SW(config-if-range)#switchport mode access
+   FIN-SW   FA-SW(config-if-range)#switchport access vlan 20
+   FIN-SW   FA-SW(config-if-range)#exit
+   FIN-SW   FA-SW(config)#int range fa0/5-6
+   FIN-SW   FA-SW(config-if-range)#switchport mode access
+   FIN-SW   FA-SW(config-if-range)#switchport access vlan 70
+   FIN-SW   FA-SW(config-if-range)#exit
+   FIN-SW   FA-SW(config)#int fa0/7
+   FIN-SW   FA-SW(config-if)#switchport mode access
+   FIN-SW   FA-SW(config-if)#switchport access vlan 50
+   FIN-SW   FA-SW(config-if)#exit
+   FIN-SW   FA-SW(config)#int range fa0/8-24, gig0/1-2
+   FIN-SW   FA-SW(config-if-range)#switchport mode access
+   FIN-SW   FA-SW(config-if-range)#switchport access vlan 199
+   FIN-SW   FA-SW(config-if-range)#shut
+   FIN-SW   FA-SW(config-if-range)#exit
+   FIN-SW   FA-SW(config)#do wr
+   ADMIN-SW   ADM-SW>enable
+   ADMIN-SW   ADM-SW#configure terminal
+   ADMIN-SW   ADM-SW(config)#interface FastEthernet0/7
+   ADMIN-SW   ADM-SW(config-if)#ex
+   ADMIN-SW   ADM-SW(config)#int range fa0/1-2
+   ADMIN-SW   ADM-SW(config-if-range)#switchport mode trunk 
+   ADMIN-SW   ADM-SW(config-if-range)#exit
+   ADMIN-SW   ADM-SW(config)#vlan 10
+   ADMIN-SW   ADM-SW(config-vlan)#name MGT
+   ADMIN-SW   ADM-SW(config-vlan)#VLAN 20
+   ADMIN-SW   ADM-SW(config-vlan)#NAME LAN
+   ADMIN-SW   ADM-SW(config-vlan)#VLAN 50
+   ADMIN-SW   ADM-SW(config-vlan)#NAME WLAN
+   ADMIN-SW   ADM-SW(config-vlan)#VLAN 70
+   ADMIN-SW   ADM-SW(config-vlan)#NAME VOIP
+   ADMIN-SW   ADM-SW(config-vlan)#VLAN 199
+   ADMIN-SW   ADM-SW(config-vlan)#NAME BLACKHOLE
+   ADMIN-SW   ADM-SW(config-vlan)#EXIT
+   ADMIN-SW   ADM-SW(config)#int range fa0/3-4
+   ADMIN-SW   ADM-SW(config-if-range)#switchport mode access
+   ADMIN-SW   ADM-SW(config-if-range)#switchport access vlan 20
+   ADMIN-SW   ADM-SW(config-if-range)#exit
+   ADMIN-SW   ADM-SW(config)#int range fa0/5-6
+   ADMIN-SW   ADM-SW(config-if-range)#switchport mode access
+   ADMIN-SW   ADM-SW(config-if-range)#switchport access vlan 70
+   ADMIN-SW   ADM-SW(config-if-range)#exit
+   ADMIN-SW   ADM-SW(config)#int fa0/7
+   ADMIN-SW   ADM-SW(config-if)#switchport mode access
+   ADMIN-SW   ADM-SW(config-if)#switchport access vlan 50
+   ADMIN-SW   ADM-SW(config-if)#exit
+   ADMIN-SW   ADM-SW(config)#int range fa0/8-24, gig0/1-2
+   ADMIN-SW   ADM-SW(config-if-range)#switchport mode access
+   ADMIN-SW   ADM-SW(config-if-range)#switchport access vlan 199
+   ADMIN-SW   ADM-SW(config-if-range)#shut
+   ADMIN-SW   ADM-SW(config-if-range)#exit
+   ADMIN-SW   ADM-SW(config)#do wr
+   ICT-SW   ICT-SW>enable
+   ICT-SW   ICT-SW#configure terminal
+   ICT-SW   ICT-SW(config)#interface FastEthernet0/9
+   ICT-SW   ICT-SW(config-if)#ex
+   ICT-SW   ICT-SW(config)#int range fa0/1-2
+   ICT-SW   ICT-SW(config-if-range)#switchport mode trunk 
+   ICT-SW   ICT-SW(config-if-range)#exit
+   ICT-SW   ICT-SW(config)#vlan 10
+   ICT-SW   ICT-SW(config-vlan)#name MGT
+   ICT-SW   ICT-SW(config-vlan)#VLAN 20
+   ICT-SW   ICT-SW(config-vlan)#NAME LAN
+   ICT-SW   ICT-SW(config-vlan)#VLAN 50
+   ICT-SW   ICT-SW(config-vlan)#NAME WLAN
+   ICT-SW   ICT-SW(config-vlan)#VLAN 70
+   ICT-SW   ICT-SW(config-vlan)#NAME VOIP
+   ICT-SW   ICT-SW(config-vlan)#VLAN 199
+   ICT-SW   ICT-SW(config-vlan)#NAME BLACKHOLE
+   ICT-SW   ICT-SW(config-vlan)#EXIT
+   ICT-SW   ICT-SW(config)#int range fa0/3-4
+   ICT-SW   ICT-SW(config-if-range)#switchport mode access
+   ICT-SW   ICT-SW(config-if-range)#switchport access vlan 20
+   ICT-SW   ICT-SW(config-if-range)#exit
+   ICT-SW   ICT-SW(config)#int range fa0/5-6
+   ICT-SW   ICT-SW(config-if-range)#switchport mode access
+   ICT-SW   ICT-SW(config-if-range)#switchport access vlan 70
+   ICT-SW   ICT-SW(config-if-range)#exit
+   ICT-SW   ICT-SW(config)#int fa0/7
+   ICT-SW   ICT-SW(config-if)#switchport mode access
+   ICT-SW   ICT-SW(config-if)#switchport access vlan 50
+   ICT-SW   ICT-SW(config-if)#exit
+   ICT-SW   ICT-SW(config)#int range fa0/8-24, gig0/1-2
+   ICT-SW   ICT-SW(config-if-range)#switchport mode access
+   ICT-SW   ICT-SW(config-if-range)#switchport access vlan 199
+   ICT-SW   ICT-SW(config-if-range)#shut
+   ICT-SW   ICT-SW(config-if-range)#exit
+   ICT-SW   ICT-SW(config)#do wr
+   SERVER-SW   SVR-SW>enable
+   SERVER-SW   SVR-SW#configure terminal
+   SERVER-SW   SVR-SW(config)#interface FastEthernet0/3
+   SERVER-SW   SVR-SW(config-if)#EX
+   SERVER-SW   SVR-SW(config)#int range fa0/1-2, fa0/7
+   SERVER-SW   SVR-SW(config-if-range)#switchport mode trunk 
+   SERVER-SW   SVR-SW(config-if-range)#exit
+   SERVER-SW   SVR-SW(config)#vlan 10
+   SERVER-SW   SVR-SW(config-vlan)#name MGT
+   SERVER-SW   SVR-SW(config-vlan)#VLAN 20
+   SERVER-SW   SVR-SW(config-vlan)#NAME LAN
+   SERVER-SW   SVR-SW(config-vlan)#VLAN 50
+   SERVER-SW   SVR-SW(config-vlan)#NAME WLAN
+   SERVER-SW   SVR-SW(config-vlan)#VLAN 70
+   SERVER-SW   SVR-SW(config-vlan)#NAME VOIP
+   SERVER-SW   SVR-SW(config-vlan)#VLAN 90
+   SERVER-SW   SVR-SW(config-vlan)#NAME INSIDE SERVERS
+   SERVER-SW   SVR-SW(config-vlan)#EXIT
+   SERVER-SW   SVR-SW(config)#int range fa0/3-5
+   SERVER-SW   SVR-SW(config-if-range)#switchport mode access
+   SERVER-SW   SVR-SW(config-if-range)#switchport access vlan 90
+   SERVER-SW   SVR-SW(config-if-range)#exit
+   SERVER-SW   SVR-SW(config)#int fa0/6
+   SERVER-SW   SVR-SW(config-if)#switchport mode access
+   SERVER-SW   SVR-SW(config-if)#switchport access vlan 50
+   SERVER-SW   SVR-SW(config-if)#exit
+   SERVER-SW   SVR-SW(config)#do wr
+   SERVER-SW   SVR-SW(config)#vlan 90
+   SERVER-SW   SVR-SW(config-vlan)#name INSIDE-SERVERS
+   SERVER-SW   SVR-SW(config-vlan)#EX
+   SERVER-SW   SVR-SW(config)#do sh vlan
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/4
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#int range gig1/0/3-8
+   CORE-SW1   CORE-SW1(config-if-range)#switchport mode trunk 
+   CORE-SW1   CORE-SW1(config-if-range)#exit
+   CORE-SW1   CORE-SW1(config)#vlan 10
+   CORE-SW1   CORE-SW1(config-vlan)#name MGT
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 20
+   CORE-SW1   CORE-SW1(config-vlan)#NAME LAN
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 50
+   CORE-SW1   CORE-SW1(config-vlan)#NAME WLAN
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 70
+   CORE-SW1   CORE-SW1(config-vlan)#NAME VOIP
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 90
+   CORE-SW1   CORE-SW1(config-vlan)#NAME INSIDE SERVERS
+   CORE-SW1   CORE-SW1(config-vlan)#EXIT
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW1   CORE-SW1(config)#int range gig1/0/3-8
+   CORE-SW1   CORE-SW1(config-if-range)#switchport mode trunk 
+   CORE-SW1   CORE-SW1(config-if-range)#exit
+   CORE-SW1   CORE-SW1(config)#vlan 10
+   CORE-SW1   CORE-SW1(config-vlan)#name MGT
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 20
+   CORE-SW1   CORE-SW1(config-vlan)#NAME LAN
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 50
+   CORE-SW1   CORE-SW1(config-vlan)#NAME WLAN
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 70
+   CORE-SW1   CORE-SW1(config-vlan)#NAME VOIP
+   CORE-SW1   CORE-SW1(config-vlan)#VLAN 90
+   CORE-SW1   CORE-SW1(config-vlan)#NAME INSIDE-SERVERS
+   CORE-SW1   CORE-SW1(config-vlan)#EXIT
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW2   CORE-SW2>enable
+   CORE-SW2   CORE-SW2#configure terminal
+   CORE-SW2   CORE-SW2(config)#interface GigabitEthernet1/0/5
+   CORE-SW2   CORE-SW2(config-if)#ex
+   CORE-SW2   CORE-SW2(config)#int range gig1/0/3-8
+   CORE-SW2   CORE-SW2(config-if-range)#switchport mode trunk 
+   CORE-SW2   CORE-SW2(config-if-range)#exit
+   CORE-SW2   CORE-SW2(config)#vlan 10
+   CORE-SW2   CORE-SW2(config-vlan)#name MGT
+   CORE-SW2   CORE-SW2(config-vlan)#VLAN 20
+   CORE-SW2   CORE-SW2(config-vlan)#NAME LAN
+   CORE-SW2   CORE-SW2(config-vlan)#VLAN 50
+   CORE-SW2   CORE-SW2(config-vlan)#NAME WLAN
+   CORE-SW2   CORE-SW2(config-vlan)#VLAN 70
+   CORE-SW2   CORE-SW2(config-vlan)#NAME VOIP
+   CORE-SW2   CORE-SW2(config-vlan)#VLAN 90
+   CORE-SW2   CORE-SW2(config-vlan)#NAME INSIDE-SERVERS
+   CORE-SW2   CORE-SW2(config-vlan)#EXIT
+   CORE-SW2   CORE-SW2(config)#do wr
+   SERVER-SW   SVR-SW>enable
+   SERVER-SW   SVR-SW#configure terminal
+   SERVER-SW   SVR-SW(config)#interface FastEthernet0/4
+   SERVER-SW   SVR-SW(config-if)#ex
+   SERVER-SW   SVR-SW(config)#int range fa0/3-6, fa0/8-24
+   SERVER-SW   SVR-SW(config-if-range)#spanning-tree portfast 
+   SERVER-SW   SVR-SW(config-if-range)#spanning-tree bpduguard enable 
+   SERVER-SW   SVR-SW(config-if-range)#ex
+   SERVER-SW   SVR-SW(config)#do wr
+   MK-SW   SM-SW>enable
+   MK-SW   SM-SW#configure terminal
+   MK-SW   SM-SW(config)#interface FastEthernet0/3
+   MK-SW   SM-SW(config-if)#ex
+   MK-SW   SM-SW(config)#int range fa0/3-24
+   MK-SW   SM-SW(config-if-range)#spanning-tree portfast
+   MK-SW   SM-SW(config-if-range)#spanning-tree bpduguard enable
+   MK-SW   SM-SW(config-if-range)#do wr
+   HR-SW   HL-SW>enable
+   HR-SW   HL-SW#configure terminal
+   HR-SW   HL-SW(config)#interface FastEthernet0/6
+   HR-SW   HL-SW(config-if)#ex
+   HR-SW   HL-SW(config)#int range fa0/3-24
+   HR-SW   HL-SW(config-if-range)#spanning-tree portfast
+   HR-SW   HL-SW(config-if-range)#spanning-tree bpduguard enable
+   HR-SW   HL-SW(config-if-range)#do wr
+   FIN-SW   FA-SW>enable
+   FIN-SW   FA-SW#configure terminal
+   FIN-SW   FA-SW(config)#interface FastEthernet0/4
+   FIN-SW   FA-SW(config-if)#ex
+   FIN-SW   FA-SW(config)#int range fa0/3-24
+   FIN-SW   FA-SW(config-if-range)#spanning-tree portfast
+   FIN-SW   FA-SW(config-if-range)#spanning-tree bpduguard enable
+   FIN-SW   FA-SW(config-if-range)#do wr
+   ADMIN-SW   ADM-SW>enable
+   ADMIN-SW   ADM-SW#configure terminal
+   ADMIN-SW   ADM-SW(config)#interface FastEthernet0/7
+   ADMIN-SW   ADM-SW(config-if)#ex
+   ADMIN-SW   ADM-SW(config)#int range fa0/3-24
+   ADMIN-SW   ADM-SW(config-if-range)#spanning-tree portfast
+   ADMIN-SW   ADM-SW(config-if-range)#spanning-tree bpduguard enable
+   ADMIN-SW   ADM-SW(config-if-range)#do wr
+   ICT-SW   ICT-SW>enable
+   ICT-SW   ICT-SW#configure terminal
+   ICT-SW   ICT-SW(config)#interface FastEthernet0/8
+   ICT-SW   ICT-SW(config-if)#ex
+   ICT-SW   ICT-SW(config)#int range fa0/3-24
+   ICT-SW   ICT-SW(config-if-range)#spanning-tree portfast
+   ICT-SW   ICT-SW(config-if-range)#spanning-tree bpduguard enable
+   ICT-SW   ICT-SW(config-if-range)#do wr
+   DMZ-SW   DMZ-SW>enable
+   DMZ-SW   DMZ-SW#configure terminal
+   DMZ-SW   DMZ-SW(config)#interface FastEthernet0/2
+   DMZ-SW   DMZ-SW(config-if)#ex
+   DMZ-SW   DMZ-SW(config)#int range fa0/1-24
+   DMZ-SW   DMZ-SW(config-if-range)#spanning-tree portfast
+   DMZ-SW   DMZ-SW(config-if-range)#spanning-tree bpduguard enable
+   DMZ-SW   DMZ-SW(config-if-range)#do wr
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/3
+   CORE-SW1   CORE-SW1(config-if)#EX
+   CORE-SW1   CORE-SW1(config)#INT range gig1/0/9-11
+   CORE-SW1   CORE-SW1(config-if-range)#channel-group 1 mode active 
+   CORE-SW1   CORE-SW1(config-if-range)#ex
+   CORE-SW1   CORE-SW1(config)#interface Port-channel 1
+   CORE-SW1   CORE-SW1(config-if)#switchport mode trunk 
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW2   CORE-SW2>enable
+   CORE-SW2   CORE-SW2#configure terminal
+   CORE-SW2   CORE-SW2(config)#interface GigabitEthernet1/0/1
+   CORE-SW2   CORE-SW2(config-if)#ex
+   CORE-SW2   CORE-SW2(config)#int range gig1/0/9-11
+   CORE-SW2   CORE-SW2(config-if-range)#channel-group 1 mode passive 
+   CORE-SW2   CORE-SW2(config-if-range)#ex
+   CORE-SW2   CORE-SW2(config)#interface Port-channel 1
+   CORE-SW2   CORE-SW2(config-if)#switchport mode trunk 
+   CORE-SW2   CORE-SW2(config-if)#ex
+   CORE-SW2   CORE-SW2(config)#do wr
+   CORE-SW2   CORE-SW2(config)#end
+   CORE-SW2   CORE-SW2#show etherchannel 
+   CORE-SW2   CORE-SW2#show etherchannel ?
+   CORE-SW2   CORE-SW2#show etherchannel port-channel 
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/4
+   CORE-SW1   CORE-SW1(config-if)#end
+   CORE-SW1   CORE-SW1#show etherchannel port-channel 
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/2
+   CORE-SW1   CORE-SW1(config-if)#IP ROUTING
+   CORE-SW2   CORE-SW2>enable
+   CORE-SW2   CORE-SW2#configure terminal
+   CORE-SW2   CORE-SW2(config)#interface GigabitEthernet1/0/4
+   CORE-SW2   CORE-SW2(config-if)#IP ROUTING
+   CORE-SW1   CORE-SW1(config)#int gi1/0/1
+   CORE-SW1   CORE-SW1(config-if)#no switchport 
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.2.2.1 255.255.255.0
+   CORE-SW1   CORE-SW1(config-if)#int gi1/0/2
+   CORE-SW1   CORE-SW1(config-if)#no switchport 
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.2.2.5 255.255.255.252
+   CORE-SW1   CORE-SW1(config-if)#int gi1/0/1
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.2.2.1 255.255.255.252
+   CORE-SW1   CORE-SW1(config-if)#int gi1/0/2
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.2.2.5 255.255.255.252
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW2   CORE-SW2(config)#int gig1/0/1
+   CORE-SW2   CORE-SW2(config-if)#no switchport 
+   CORE-SW2   CORE-SW2(config-if)#no shut
+   CORE-SW2   CORE-SW2(config-if)#ip add 10.2.2.9 255.255.255.252
+   CORE-SW2   CORE-SW2(config-if)#int gig1/0/2
+   CORE-SW2   CORE-SW2(config-if)#no switchport 
+   CORE-SW2   CORE-SW2(config-if)#no shut
+   CORE-SW2   CORE-SW2(config-if)#ip add 10.2.2.13 255.255.255.252
+   CORE-SW2   CORE-SW2(config-if)#ex
+   CORE-SW2   CORE-SW2(config)#do wr
+   SEACOM-ISP   Router>enable
+   SEACOM-ISP   Router#configure terminal
+   SEACOM-ISP   Router(config)#interface GigabitEthernet0/0
+   SEACOM-ISP   Router(config-if)#no shutdown
+   SEACOM-ISP   Router(config-if)#ip address 105.100.50.1 255.0.0.0
+   SEACOM-ISP   Router(config-if)#ip address 105.100.50.1 255.255.255.252
+   SEACOM-ISP   Router(config-if)#exit
+   SEACOM-ISP   Router(config)#interface GigabitEthernet0/1
+   SEACOM-ISP   Router(config-if)#no shutdown
+   SEACOM-ISP   Router(config-if)#ip address 105.100.50.5 255.255.255.252
+   SEACOM-ISP   Router(config-if)#ip address 105.100.50.5 255.255.255.252
+   SEACOM-ISP   Router(config-if)#exit
+   SEACOM-ISP   Router(config)#interface GigabitEthernet0/2
+   SEACOM-ISP   Router(config-if)#no shutdown
+   SEACOM-ISP   Router(config-if)#ip address 20.20.20.1 255.0.0.0
+   SEACOM-ISP   Router(config-if)#ip address 20.20.20.1 255.255.255.252
+   SAFARICOM-ISP   Router>enable
+   SAFARICOM-ISP   Router#configure terminal
+   SAFARICOM-ISP   Router(config)#interface GigabitEthernet0/0
+   SAFARICOM-ISP   Router(config-if)#no shutdown
+   SAFARICOM-ISP   Router(config-if)#ip address 197.200.100.1 255.255.255.0
+   SAFARICOM-ISP   Router(config-if)#ip address 197.200.100.1 255.255.255.252
+   SAFARICOM-ISP   Router(config-if)#exit
+   SAFARICOM-ISP   Router(config)#interface GigabitEthernet0/1
+   SAFARICOM-ISP   Router(config-if)#no shutdown
+   SAFARICOM-ISP   Router(config-if)#ip address 197.200.100.5 255.255.255.252
+   SAFARICOM-ISP   Router(config-if)#ip address 197.200.100.5 255.255.255.252
+   SAFARICOM-ISP   Router(config-if)#exit
+   SAFARICOM-ISP   Router(config)#interface GigabitEthernet0/0
+   SAFARICOM-ISP   Router(config-if)#exit
+   SAFARICOM-ISP   Router(config)#interface GigabitEthernet0/1
+   SAFARICOM-ISP   Router(config-if)#exit
+   SAFARICOM-ISP   Router(config)#interface GigabitEthernet0/2
+   SAFARICOM-ISP   Router(config-if)#no shutdown
+   SAFARICOM-ISP   Router(config-if)#ip address 30.30.30.1 255.0.0.0
+   SAFARICOM-ISP   Router(config-if)#ip address 30.30.30.1 255.255.255.252
+   Router4   Router>enable
+   Router4   Router#configure terminal
+   Router4   Router(config)#interface GigabitEthernet0/0
+   Router4   Router(config-if)#no shutdown
+   Router4   Router(config-if)#ip address 20.20.20.2 255.0.0.0
+   Router4   Router(config-if)#ip address 20.20.20.2 255.255.255.252
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/1
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/0
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/1
+   Router4   Router(config-if)#no shutdown
+   Router4   Router(config-if)#ip address 30.30.30.2 255.0.0.0
+   Router4   Router(config-if)#ip address 30.30.30.2 255.255.255.252
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/2
+   Router4   Router(config-if)#no shutdown
+   Router4   Router(config-if)#ip address 8.0.0.1 255.0.0.0
+   Router4   Router(config-if)#ip address 8.0.0.1 255.0.0.0
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/1
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#INT VLAN 10
+   CORE-SW1   CORE-SW1(config-if)#NO SHUT
+   CORE-SW1   CORE-SW1(config-if)#ip add 192.168.10.3 255.255.255.0
+   CORE-SW1   CORE-SW1(config-if)#standby ip ?
+   CORE-SW1   CORE-SW1(config-if)#standby ip 192.168.10.1
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.35
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#int vlan 20
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 172.16.0.3 255.255.0.0
+   CORE-SW1   CORE-SW1(config-if)#standby ip 172.16.0.1
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.35
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#int vlan 50
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.20.0.2 255.255.0.0
+   CORE-SW1   CORE-SW1(config-if)#standby ip 10.20.0.1
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.35
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#int vlan 90
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.11.11.34 255.255.255.224
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#int vlan 10
+   CORE-SW1   CORE-SW1(config-if)#no ip helper-address 10.11.11.35
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.38
+   CORE-SW1   CORE-SW1(config-if)#int vlan 20
+   CORE-SW1   CORE-SW1(config-if)#no ip helper-address 10.11.11.35
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.38
+   CORE-SW1   CORE-SW1(config-if)#int vlan 50
+   CORE-SW1   CORE-SW1(config-if)#no ip helper-address 10.11.11.35
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.38
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.38
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW1   CORE-SW1(config)#do sh start
+   CORE-SW1   CORE-SW1(config)#no int vlan 10
+   CORE-SW1   CORE-SW1(config)#no int vlan 20
+   CORE-SW1   CORE-SW1(config)#no int vlan 50
+   CORE-SW1   CORE-SW1(config)#no int vlan 90
+   CORE-SW1   CORE-SW1(config)#ex
+   CORE-SW1   CORE-SW1#end
+   CORE-SW1   CORE-SW1#ex
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/1
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#INT vlan 10
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 192.168.10.3 255.255.255.0
+   CORE-SW1   CORE-SW1(config-if)#standby 10 ip 192.168.10.1
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.38
+   CORE-SW1   CORE-SW1(config-if)#exit
+   CORE-SW1   CORE-SW1(config)#INT vlan 20
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 172.16.0.3 255.255.0.0
+   CORE-SW1   CORE-SW1(config-if)#standby 20 ip 172.16.0.1
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.38
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#INT vlan 50
+   CORE-SW1   CORE-SW1(config-if)#no shut
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.20.0.2 255.255.0.0
+   CORE-SW1   CORE-SW1(config-if)#standby 50 ip 10.20.0.1
+   CORE-SW1   CORE-SW1(config-if)#ip helper-address 10.11.11.38
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#INT vlan 90
+   CORE-SW1   CORE-SW1(config-if)#no shu
+   CORE-SW1   CORE-SW1(config-if)#ip add 
+   CORE-SW1   CORE-SW1(config-if)#ip add 10.11.11.34 255.255.255.224
+   CORE-SW1   CORE-SW1(config-if)#standby 90 ip 10.11.11.33
+   CORE-SW1   CORE-SW1(config-if)#ex
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW1   CORE-SW1(config)#\
+   CORE-SW1   CORE-SW1(config)#do sh str
+   CORE-SW1   CORE-SW1(config)#do sh sta
+   CORE-SW1   CORE-SW1(config)#do sh star
+   CORE-SW2   CORE-SW2>enable
+   CORE-SW2   CORE-SW2#configure terminal
+   CORE-SW2   CORE-SW2(config)#interface GigabitEthernet1/0/3
+   CORE-SW2   CORE-SW2(config-if)#ex
+   CORE-SW2   CORE-SW2(config)#interface Vlan10
+   CORE-SW2   CORE-SW2(config-if)#ip address 192.168.10.2 255.255.255.0
+   CORE-SW2   CORE-SW2(config-if)#ip helper-address 10.11.11.38
+   CORE-SW2   CORE-SW2(config-if)#standby 10 ip 192.168.10.1
+   CORE-SW2   CORE-SW2(config-if)#interface Vlan20
+   CORE-SW2   CORE-SW2(config-if)#ip address 172.16.0.2 255.255.0.0
+   CORE-SW2   CORE-SW2(config-if)#ip helper-address 10.11.11.38
+   CORE-SW2   CORE-SW2(config-if)#standby 20 ip 172.16.0.1
+   CORE-SW2   CORE-SW2(config-if)#interface Vlan50
+   CORE-SW2   CORE-SW2(config-if)#ip address 10.20.0.3 255.255.0.0
+   CORE-SW2   CORE-SW2(config-if)#ip helper-address 10.11.11.38
+   CORE-SW2   CORE-SW2(config-if)#standby 50 ip 10.20.0.1
+   CORE-SW2   CORE-SW2(config-if)#interface Vlan90
+   CORE-SW2   CORE-SW2(config-if)#ip address 10.11.11.35 255.255.255.224
+   CORE-SW2   CORE-SW2(config-if)#standby 90 ip 10.11.11.33
+   CORE-SW2   CORE-SW2(config-if)#do wr
+   CORE-SW2   CORE-SW2(config-if)#ex
+   CORE-SW2   CORE-SW2(config)#do sh sta
+   CORE-SW2   CORE-SW2(config)#do sh star
+   CORE-SW2   CORE-SW2(config)#end
+   CORE-SW2   CORE-SW2#show standby brief 
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/1
+   CORE-SW1   CORE-SW1(config-if)#exit
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/2
+   CORE-SW1   CORE-SW1(config-if)#end
+   CORE-SW1   CORE-SW1#show standby brief 
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/2
+   CORE-SW1   CORE-SW1(config-if)#EX
+   CORE-SW1   CORE-SW1(config)#router ospf 35 
+   CORE-SW1   CORE-SW1(config-router)#router-id 1.1.1.1
+   CORE-SW1   CORE-SW1(config-router)#network 10.2.2.0 0.0.0.3 area 0
+   CORE-SW1   CORE-SW1(config-router)#network 10.2.2.4 0.0.0.3 area 0
+   CORE-SW1   CORE-SW1(config-router)#network 192.168.10.0 0.0.0.255 area 0
+   CORE-SW1   CORE-SW1(config-router)#network 172.16.0.0 0.0.255.255 area 0
+   CORE-SW1   CORE-SW1(config-router)#network 10.20.0.0 0.0.255.255 area 0
+   CORE-SW1   CORE-SW1(config-router)#network 10.11.11.32 0.0.0.31 area 0
+   CORE-SW1   CORE-SW1(config-router)#ex
+   CORE-SW1   CORE-SW1(config)#do wr
+   CORE-SW1   CORE-SW1(config)#do sh sta
+   CORE-SW1   CORE-SW1(config)#do sh star
+   CORE-SW2   CORE-SW2>enable
+   CORE-SW2   CORE-SW2#configure terminal
+   CORE-SW2   CORE-SW2(config)#interface GigabitEthernet1/0/6
+   CORE-SW2   CORE-SW2(config-if)#ex
+   CORE-SW2   CORE-SW2(config)#router ospf 35
+   CORE-SW2   CORE-SW2(config-router)#router-id 1.1.2.2
+   CORE-SW2   CORE-SW2(config-router)#network 10.2.2.8 0.0.0.3 area 0
+   CORE-SW2   CORE-SW2(config-router)#network 10.2.2.12 0.0.0.3 area 0
+   CORE-SW2   CORE-SW2(config-router)#network 192.168.10.0 0.0.0.255 area 0
+   CORE-SW2   CORE-SW2(config-router)#network 172.16.0.0 0.0.255.255 area 0
+   CORE-SW2   CORE-SW2(config-router)#network 10.20.0.0 0.0.255.255 area 0
+   CORE-SW2   CORE-SW2(config-router)#network 10.11.11.32 0.0.0.31 area 0
+   CORE-SW2   CORE-SW2(config-router)#ex
+   CORE-SW2   CORE-SW2(config)#do wr
+   SEACOM-ISP   Router>enable
+   SEACOM-ISP   Router#configure terminal
+   SEACOM-ISP   Router(config)#interface GigabitEthernet0/0
+   SEACOM-ISP   Router(config-if)#ex
+   SEACOM-ISP   Router(config)#router ospf 35
+   SEACOM-ISP   Router(config-router)#router-id 1.1.3.3
+   SEACOM-ISP   Router(config-router)#network 105.100.50.0 0.0.0.3 area 0
+   SEACOM-ISP   Router(config-router)#network 105.100.50.4 0.0.0.3 area 0
+   SEACOM-ISP   Router(config-router)#network 20.20.20.0 0.0.0.3 area 0
+   SEACOM-ISP   Router(config-router)#ex
+   SEACOM-ISP   Router(config)#do wr
+   SAFARICOM-ISP   Router>en
+   SAFARICOM-ISP   Router#conf
+   SAFARICOM-ISP   Router(config)#router ospf 35
+   SAFARICOM-ISP   Router(config-router)#router-id 1.1.4.4
+   SAFARICOM-ISP   Router(config-router)#network 30.30.30.0 0.0.0.3 area 0
+   SAFARICOM-ISP   Router(config-router)#network 197.200.100.0 0.0.0.3 area 0
+   SAFARICOM-ISP   Router(config-router)#network 197.200.100.4 0.0.0.3 area 0
+   SAFARICOM-ISP   Router(config-router)#ex
+   SAFARICOM-ISP   Router(config)#do wr
+   Router4   Router>enable
+   Router4   Router#configure terminal
+   Router4   Router(config)#interface GigabitEthernet0/2
+   Router4   Router(config-if)#ex
+   Router4   Router(config)#router ospf 35
+   Router4   Router(config-router)#router-id 1.1.5.5
+   Router4   Router(config-router)#network 8.0.0.0 0.255.255.255 area 0
+   Router4   Router(config-router)#network 20.20.20.0 0.0.0.3 area 0
+   Router4   Router(config-router)#network 30.30.30.0 0.0.0.3 area 0
+   Router4   Router(config-router)#ex
+   Router4   Router(config)#do wr
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/2
+   CORE-SW1   CORE-SW1(config-if)#END
+   CORE-SW1   CORE-SW1#SHOW IP OSpf Neighbor 
+   PERIMETER-FW1   ciscoasa>en
+   PERIMETER-FW1   ciscoasa#conf t
+   PERIMETER-FW1   ciscoasa(config)#hostname FWL1
+   PERIMETER-FW1   FWL1(config)#int gig1/3
+   PERIMETER-FW1   FWL1(config-if)#no shut
+   PERIMETER-FW1   FWL1(config-if)#ip add 10.2.2.2 255.255.255.252
+   PERIMETER-FW1   FWL1(config-if)#nameif INSIDE1
+   PERIMETER-FW1   FWL1(config-if)#SECurity-level 100
+   PERIMETER-FW1   FWL1(config-if)#EX
+   PERIMETER-FW1   FWL1(config)#int gig1/4
+   PERIMETER-FW1   FWL1(config-if)#no shut
+   PERIMETER-FW1   FWL1(config-if)#ip add 10.2.2.10 255.255.255.252
+   PERIMETER-FW1   FWL1(config-if)#nameif INSIDE2
+   PERIMETER-FW1   FWL1(config-if)#SECurity-level 100
+   PERIMETER-FW1   FWL1(config-if)#EX
+   PERIMETER-FW1   FWL1(config)#int gig1/5
+   PERIMETER-FW1   FWL1(config-if)#no shut
+   PERIMETER-FW1   FWL1(config-if)#ip add 10.11.11.1 255.255.255.224
+   PERIMETER-FW1   FWL1(config-if)#NAMeif DMZ
+   PERIMETER-FW1   FWL1(config-if)#SECurity-level 70
+   PERIMETER-FW1   FWL1(config-if)#EX
+   PERIMETER-FW1   FWL1(config)#int gig1/1
+   PERIMETER-FW1   FWL1(config-if)#NO SHUT
+   PERIMETER-FW1   FWL1(config-if)#ip add 105.100.50.2 255.255.255.252
+   PERIMETER-FW1   FWL1(config-if)#nameif OUTSIDE1
+   PERIMETER-FW1   FWL1(config-if)#SECurity-level 0
+   PERIMETER-FW1   FWL1(config-if)#EX
+   PERIMETER-FW1   FWL1(config)#int gig1/2
+   PERIMETER-FW1   FWL1(config-if)#NO SHUT
+   PERIMETER-FW1   FWL1(config-if)#ip add 197.200.100.2 255.255.255.252
+   PERIMETER-FW1   FWL1(config-if)#nameif OUTSIDE2
+   PERIMETER-FW1   FWL1(config-if)#SECurity-level 0
+   PERIMETER-FW1   FWL1(config-if)#EX
+   PERIMETER-FW1   FWL1(config)#DO WR
+   PERIMETER-FW1   FWL1(config)#WR MEM
+   PERIMETER-FW2   ciscoasa>EN
+   PERIMETER-FW2   ciscoasa#CONF T
+   PERIMETER-FW2   ciscoasa(config)#HOSTNA FW2
+   PERIMETER-FW2   FW2(config)#int gig1/3
+   PERIMETER-FW2   FW2(config-if)#no shut
+   PERIMETER-FW2   FW2(config-if)#ip add 10.2.2.6 255.255.255.252
+   PERIMETER-FW2   FW2(config-if)#nameif INSIDE1
+   PERIMETER-FW2   FW2(config-if)#SECurity-level 100
+   PERIMETER-FW2   FW2(config-if)#EX
+   PERIMETER-FW2   FW2(config)#int gig1/4
+   PERIMETER-FW2   FW2(config-if)#NO SHUT
+   PERIMETER-FW2   FW2(config-if)#ip add 10.2.2.14 255.255.255.252
+   PERIMETER-FW2   FW2(config-if)#nameif INSIDE2
+   PERIMETER-FW2   FW2(config-if)#SECurity-level 100
+   PERIMETER-FW2   FW2(config-if)#EX
+   PERIMETER-FW2   FW2(config)#int gig1/1
+   PERIMETER-FW2   FW2(config-if)#NO SHUT
+   PERIMETER-FW2   FW2(config-if)#IP ADD 105.100.50.6 255.255.255.252
+   PERIMETER-FW2   FW2(config-if)#nameif OUTSIDE1
+   PERIMETER-FW2   FW2(config-if)#SECurity-level 0
+   PERIMETER-FW2   FW2(config-if)#EX
+   PERIMETER-FW2   FW2(config)#int gig1/2
+   PERIMETER-FW2   FW2(config-if)#NO SHUT
+   PERIMETER-FW2   FW2(config-if)#IP ADD 197.200.100.6 255.255.255.252
+   PERIMETER-FW2   FW2(config-if)#nameif OUTSIDE2
+   PERIMETER-FW2   FW2(config-if)#SECurity-level 0
+   PERIMETER-FW2   FW2(config-if)#EX
+   PERIMETER-FW2   FW2(config)#WR MEM
+   PERIMETER-FW1   FWL1(config)#route ?
+   PERIMETER-FW1   FWL1(config)#route OUTSIDE1 ?
+   PERIMETER-FW1   FWL1(config)#route OUTSIDE1 0.0.0.0 0.0.0.0 105.100.50.1
+   PERIMETER-FW1   FWL1(config)#route OUTSIDE1 0.0.0.0 0.0.0.0 105.100.50.1
+   PERIMETER-FW1   FWL1(config)#route OUTSIDE2 0.0.0.0 0.0.0.0 197.200.100.1 70
+   PERIMETER-FW1   FWL1(config)#router ospf 35
+   PERIMETER-FW1   FWL1(config-router)#router-id 1.1.8.8
+   PERIMETER-FW1   FWL1(config-router)#network 105.100.50.0 255.255.255.252
+   PERIMETER-FW1   FWL1(config-router)#network 105.100.50.0 255.255.255.252 area 0
+   PERIMETER-FW1   FWL1(config-router)#network 197.0 255.255.255.252 area 0.200.100
+   PERIMETER-FW1   FWL1(config-router)#network 197.200.100.0 255.255.255.252 area 0
+   PERIMETER-FW1   FWL1(config-router)#network 10.11.11.0 255.255.255.224 area 0
+   PERIMETER-FW1   FWL1(config-router)#network 10.2.2.0 255.255.255.252 area 0
+   PERIMETER-FW1   FWL1(config-router)#network 10.2.2.8 255.255.255.252 area 0
+   PERIMETER-FW1   FWL1(config-router)#exit
+   PERIMETER-FW1   FWL1(config)#wr mem
+   PERIMETER-FW2   FW2(config)#route OUTSIDE2 0.0.0.0 0.0.0.0 197.200.100.5
+   PERIMETER-FW2   FW2(config)#route OUTSIDE1 0.0.0.0 0.0.0.0 105.100.50.5
+   PERIMETER-FW2   FW2(config)#ROUTER OSpf 35
+   PERIMETER-FW2   FW2(config-router)#router-id 1.1.9.9
+   PERIMETER-FW2   FW2(config-router)#network 197.200.100.4 255.255.255.252 area 0
+   PERIMETER-FW2   FW2(config-router)#network 105.100.50.4 255.255.255.252 area 0
+   PERIMETER-FW2   FW2(config-router)#network 10.2.2.4 
+   PERIMETER-FW2   FW2(config-router)#network 10.2.2.4 255.255.255.252 area 0
+   PERIMETER-FW2   FW2(config-router)#network 10.2.2.12 255.255.255.252 area 0
+   PERIMETER-FW2   FW2(config-router)#exit
+   PERIMETER-FW2   FW2(config)#wr mem
+   PERIMETER-FW1   FWL1(config)#object network INSIDE1-OUTSIDE1
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE1 , OUTSIDE1 ) dynamic interface ?
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE1 , OUTSIDE1 ) dynamic interface 
+   PERIMETER-FW1   FWL1(config-network-object)#ex
+   PERIMETER-FW1   FWL1#conf t
+   PERIMETER-FW1   FWL1(config)#object network INSIDE2-OUTSIDE1
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE2 , OUTSIDE1 ) dynamic interface 
+   PERIMETER-FW1   FWL1(config-network-object)#ex
+   PERIMETER-FW1   FWL1#conf t
+   PERIMETER-FW1   FWL1(config)#object network INSIDEw1-OUTSIDEw1
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE1 , OUTSIDE1 ) dynamic interface 
+   PERIMETER-FW1   FWL1(config-network-object)#object network INSIDEw2-OUTSIDEw1
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE2 , OUTSIDE1 ) dynamic interface 
+   PERIMETER-FW1   FWL1(config-network-object)#ex
+   PERIMETER-FW1   FWL1#conf t
+   PERIMETER-FW1   FWL1(config)#object network INSIDE1-OUTSIDE2
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE1 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW1   FWL1(config-network-object)#object network INSIDE2-OUTSIDE2
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE2 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW1   FWL1(config-network-object)#object network INSIDEw1-OUTSIDEw2
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE1 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW1   FWL1(config-network-object)#object network INSIDEw2-OUTSIDEw2
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( INSIDE2 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW1   FWL1(config-network-object)#object network DMZ-OUTSIDE1
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 10.11.11.0 255.255.255.224
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( DMZ , OUTSIDE1 ) dynamic interface
+   PERIMETER-FW1   FWL1(config-network-object)#object network DMZ-OUTSIDE2
+   PERIMETER-FW1   FWL1(config-network-object)#subnet 10.11.11.0 255.255.255.224
+   PERIMETER-FW1   FWL1(config-network-object)#nat ( DMZ , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW1   FWL1(config-network-object)#WR MEM
+   PERIMETER-FW1   FWL1(config-network-object)#EXIT
+   PERIMETER-FW1   FWL1#CON F
+   PERIMETER-FW1   FWL1#CONF T
+   PERIMETER-FW1   FWL1(config)#sh sstart
+   PERIMETER-FW1   FWL1(config)#show start
+   PERIMETER-FW1   FWL1(config)#show start
+   PERIMETER-FW2   FW2(config)#object network INSIDE1-OUTSIDE1
+   PERIMETER-FW2   FW2(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE1 , OUTSIDE1 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#object network INSIDE1-OUTSIDE2
+   PERIMETER-FW2   FW2(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE1 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#object network INSIDE2-OUTSIDE1
+   PERIMETER-FW2   FW2(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE2 , OUTSIDE1 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#object network INSIDE2-OUTSIDE2
+   PERIMETER-FW2   FW2(config-network-object)#subnet 172.16.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE2 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#object network INSIDEw1-OUTSIDEw1
+   PERIMETER-FW2   FW2(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE1 , OUTSIDE1 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#object network INSIDEw1-OUTSIDEw2
+   PERIMETER-FW2   FW2(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE1 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#object network INSIDEw2-OUTSIDEw1
+   PERIMETER-FW2   FW2(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE2 , OUTSIDE1 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#object network INSIDEw2-OUTSIDEw2
+   PERIMETER-FW2   FW2(config-network-object)#subnet 10.20.0.0 255.255.0.0
+   PERIMETER-FW2   FW2(config-network-object)#nat ( INSIDE2 , OUTSIDE2 ) dynamic interface
+   PERIMETER-FW2   FW2(config-network-object)#wr mem
+   PERIMETER-FW2   FW2(config-network-object)#exit
+   PERIMETER-FW2   FW2#conf t
+   PERIMETER-FW1   FWL1(config)#access-list RES extended ?
+   PERIMETER-FW1   FWL1(config)#access-list RES extended 
+   PERIMETER-FW1   FWL1(config)#access-list RES extended permit icmp any any
+   PERIMETER-FW1   FWL1(config)#access-list RES extended permit tcp any any eq 80
+   PERIMETER-FW1   FWL1(config)#access-list RES extended permit tcp any any eq 53
+   PERIMETER-FW1   FWL1(config)#access-list RES extended permit udp any any eq 53
+   PERIMETER-FW1   FWL1(config)#access-group RES in interface DMZ
+   PERIMETER-FW1   FWL1(config)#access-group RES in interface OUTSIDE1
+   PERIMETER-FW1   FWL1(config)#access-group RES in interface OUTSIDE2
+   PERIMETER-FW1   FWL1(config)#DO WR
+   PERIMETER-FW1   FWL1(config)#WR MEM
+   PERIMETER-FW1   FWL1(config)#SHOW START
+   PERIMETER-FW2   FW2(config)#access-list RES extended permit icmp any any
+   PERIMETER-FW2   FW2(config)#access-list RES extended permit tcp any any eq 80
+   PERIMETER-FW2   FW2(config)#access-list RES extended permit tcp any any eq 53
+   PERIMETER-FW2   FW2(config)#access-list RES extended permit udp any any eq 53
+   PERIMETER-FW2   FW2(config)#access-group RES in interface OUTSIDE1
+   PERIMETER-FW2   FW2(config)#access-group RES in interface OUTSIDE2
+   PERIMETER-FW2   FW2(config)#WR MEM
+   HR-PC   C:\>PING 10.20.0.10 -t
+   Router4   Router>en
+   Router4   Router#sh star
+   Router4   Router#wr
+   SEACOM-ISP   Router>en
+   SEACOM-ISP   Router#wr
+   SAFARICOM-ISP   Router>en
+   SAFARICOM-ISP   Router#wr
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/5
+   CORE-SW1   CORE-SW1(config-if)#end
+   CORE-SW1   CORE-SW1#sh standby brief 
+   PERIMETER-FW2   FW2>en
+   PERIMETER-FW2   FW2#sh start
+   PERIMETER-FW2   FW2#conf t
+   PERIMETER-FW2   FW2(config)#no route OUTSIDE1 0.0.0.0 0.0.0.0 105.100.50.5 1
+   PERIMETER-FW2   FW2(config)#route OUTSIDE1 0.0.0.0 0.0.0.0 105.100.50.5 70
+   PERIMETER-FW2   FW2(config)#wr mem
+   MK-SW   SM-SW>enable
+   MK-SW   SM-SW#configure terminal
+   MK-SW   SM-SW(config)#interface FastEthernet0/3
+   MK-SW   SM-SW(config-if)#ex
+   MK-SW   SM-SW(config)#int range fa0/5-6
+   MK-SW   SM-SW(config-if-range)#switchport voice vlan 70
+   MK-SW   SM-SW(config-if-range)#ex
+   MK-SW   SM-SW(config)#do wr
+   MK-SW   SM-SW(config)#int range fa0/5-6
+   MK-SW   SM-SW(config-if-range)#no switchport access vlan 70
+   HR-SW   HL-SW>enable
+   HR-SW   HL-SW#configure terminal
+   HR-SW   HL-SW(config)#interface FastEthernet0/2
+   HR-SW   HL-SW(config-if)#ex
+   HR-SW   HL-SW(config)#int range fa0/5-6
+   HR-SW   HL-SW(config-if-range)#no switchport access vlan 70
+   HR-SW   HL-SW(config-if-range)#switchport voice vlan 70
+   HR-SW   HL-SW(config-if-range)#exit
+   HR-SW   HL-SW(config)#do wr
+   FIN-SW   FA-SW>enable
+   FIN-SW   FA-SW#configure terminal
+   FIN-SW   FA-SW(config)#interface FastEthernet0/4
+   FIN-SW   FA-SW(config-if)#ex
+   FIN-SW   FA-SW(config)#int range fa0/5-6
+   FIN-SW   FA-SW(config-if-range)#no switchport access vlan 70
+   FIN-SW   FA-SW(config-if-range)#switchport voice vlan 70
+   FIN-SW   FA-SW(config-if-range)#exit
+   FIN-SW   FA-SW(config)#do wr
+   ADMIN-SW   ADM-SW>enable
+   ADMIN-SW   ADM-SW#configure terminal
+   ADMIN-SW   ADM-SW(config)#interface FastEthernet0/6
+   ADMIN-SW   ADM-SW(config-if)#ex
+   ADMIN-SW   ADM-SW(config)#int range fa0/5-6
+   ADMIN-SW   ADM-SW(config-if-range)#no switchport access vlan 70
+   ADMIN-SW   ADM-SW(config-if-range)#switchport voice vlan 70
+   ADMIN-SW   ADM-SW(config-if-range)#exit
+   ADMIN-SW   ADM-SW(config)#do wr
+   ICT-SW   ICT-SW>enable
+   ICT-SW   ICT-SW#configure terminal
+   ICT-SW   ICT-SW(config)#interface FastEthernet0/3
+   ICT-SW   ICT-SW(config-if)#ex
+   ICT-SW   ICT-SW(config)#int range fa0/5-6
+   ICT-SW   ICT-SW(config-if-range)#no switchport access vlan 70
+   ICT-SW   ICT-SW(config-if-range)#switchport voice vlan 70
+   ICT-SW   ICT-SW(config-if-range)#exit
+   ICT-SW   ICT-SW(config)#do wr
+   Cisco Voice Gateway   Router>EN
+   Cisco Voice Gateway   Router#CONF T
+   Cisco Voice Gateway   Router(config)#INT F0/0
+   Cisco Voice Gateway   Router(config-if)#NO SHUT
+   Cisco Voice Gateway   Router(config-if)#EX
+   Cisco Voice Gateway   Router(config)#int fa0/0.70
+   Cisco Voice Gateway   Router(config-subif)#ip add 172.30.0.1 255.255.0.0
+   Cisco Voice Gateway   Router(config-subif)#encapsulation dot1Q 70
+   Cisco Voice Gateway   Router(config-subif)#ip add 172.30.0.1 255.255.0.0
+   Cisco Voice Gateway   Router(config-subif)#ex
+   Cisco Voice Gateway   Router(config)#service dhcp 
+   Cisco Voice Gateway   Router(config)#ip dhcp pool VOIP-POOL
+   Cisco Voice Gateway   Router(dhcp-config)#network 172.30.0.0 255.255.0.0
+   Cisco Voice Gateway   Router(dhcp-config)#default-router 172.30.0.1
+   Cisco Voice Gateway   Router(dhcp-config)#option 150 ip 172.30.0.1
+   Cisco Voice Gateway   Router(dhcp-config)#eix
+   Cisco Voice Gateway   Router(dhcp-config)#exit
+   Cisco Voice Gateway   Router(config)#telephony-service 
+   Cisco Voice Gateway   Router(config-telephony)#max-ephones 30
+   Cisco Voice Gateway   Router(config-telephony)#max-dn 30
+   Cisco Voice Gateway   Router(config-telephony)#ip source-address 172.30.0.1 port 2000
+   Cisco Voice Gateway   Router(config-telephony)#auto assign 1 to 30
+   Cisco Voice Gateway   Router(config-telephony)#exit
+   Cisco Voice Gateway   Router(config)#ephone-dn 1
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 401
+   Cisco Voice Gateway   Router(config-ephone-dn)#ex
+   Cisco Voice Gateway   Router(config)#ephone-dn 2
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 402
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 3
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 3
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 403
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 4
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 404
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 5
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 405
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 6
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 406
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 7
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 407
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 408
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 9
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 409
+   Cisco Voice Gateway   Router(config-ephone-dn)#ephone-dn 10
+   Cisco Voice Gateway   Router(config-ephone-dn)#number 410
+   Cisco Voice Gateway   Router(config-ephone-dn)#ex
+   Cisco Voice Gateway   Router(config)#do wr
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/5
+   CORE-SW1   CORE-SW1(config-if)#end
+   CORE-SW1   CORE-SW1#sh standby brief 
+   CORE-SW2   CORE-SW2>enable
+   CORE-SW2   CORE-SW2#configure terminal
+   CORE-SW2   CORE-SW2(config)#interface GigabitEthernet1/0/3
+   CORE-SW2   CORE-SW2(config-if)#end
+   CORE-SW2   CORE-SW2#sh standby brief 
+   ICT-SW   ICT-SW>enable
+   ICT-SW   ICT-SW#configure terminal
+   Router4   Router>enable
+   Router4   Router#configure terminal
+   Router4   Router(config)#interface GigabitEthernet0/0
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/1
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/2
+   CORE-SW1   CORE-SW1>enable
+   CORE-SW1   CORE-SW1#configure terminal
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet1/0/11
+   FIN-SW   FA-SW>enable
+   FIN-SW   FA-SW#configure terminal
+   FIN-SW   FA-SW(config)#interface FastEthernet0/1
+   FIN-SW   FA-SW(config-if)#exit
+   FIN-SW   FA-SW(config)#interface FastEthernet0/2
+   HR-SW   HL-SW>enable
+   HR-SW   HL-SW#configure terminal
+   HR-SW   HL-SW(config)#interface FastEthernet0/1
+   CORE-SW1   CORE-SW1>en
+   CORE-SW1   CORE-SW1#conf t
+   CORE-SW1   CORE-SW1(config)#ipv6 unicast-routing
+   CORE-SW1   CORE-SW1(config)#interface Vlan10
+   CORE-SW1   CORE-SW1(config-if)#description Mgt VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:10::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan20
+   CORE-SW1   CORE-SW1(config-if)#description LAN VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:20::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan50
+   CORE-SW1   CORE-SW1(config-if)#description WLAN VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:50::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan70
+   CORE-SW1   CORE-SW1(config-if)#description VoIP VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:70::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan90
+   CORE-SW1   CORE-SW1(config-if)#description Inside Servers
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:90::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#:heart:
+   CORE-SW1   CORE-SW1(config-if)#Kattints, ha reaglni szeretnl
+   CORE-SW1   CORE-SW1(config-if)#:toilet:
+   CORE-SW1   CORE-SW1(config-if)#Kattints, ha reaglni szeretnl
+   CORE-SW1   CORE-SW1(config-if)#:saluting_face:
+   CORE-SW1   CORE-SW1(config-if)#Kattints, ha reaglni szeretnl
+   CORE-SW1   CORE-SW1(config-if)#Reakci hozzadsa
+   CORE-SW1   CORE-SW1(config-if)#Vlasz
+   CORE-SW1   CORE-SW1(config-if)#Tovbbts
+   CORE-SW1   CORE-SW1(config-if)#Tbb
+   CORE-SW1   CORE-SW1(config-if)#zenet: @Kristof
+   CORE-SW1   CORE-SW1(config-if)#conf t
+   CORE-SW1   CORE-SW1(config-if)#ipv6 unicast-routing
+   CORE-SW1   CORE-SW1(config)#interface Vlan10
+   CORE-SW1   CORE-SW1(config-if)#description Mgt VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:10::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan20
+   CORE-SW1   CORE-SW1(config-if)#description LAN VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:20::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan50
+   CORE-SW1   CORE-SW1(config-if)#description WLAN VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:50::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan70
+   CORE-SW1   CORE-SW1(config-if)#description VoIP VLAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:70::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1(config-if)#interface Vlan90
+   CORE-SW1   CORE-SW1(config-if)#description Inside Servers
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:90::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enabl
+   CORE-SW1   CORE-SW1(config-if)#ipv6 enable
+   CORE-SW2   CORE-SW2>en
+   CORE-SW2   CORE-SW2#conf t
+   CORE-SW2   CORE-SW2(config)#ipv6 unicast-routing
+   CORE-SW2   CORE-SW2(config)#interface Vlan10
+   CORE-SW2   CORE-SW2(config-if)#description Mgt VLAN
+   CORE-SW2   CORE-SW2(config-if)#ipv6 address 2001:db8:10::1/64
+   CORE-SW2   CORE-SW2(config-if)#ipv6 enable
+   CORE-SW2   CORE-SW2(config-if)#interface Vlan20
+   CORE-SW2   CORE-SW2(config-if)#description LAN VLAN
+   CORE-SW2   CORE-SW2(config-if)#ipv6 address 2001:db8:20::1/64
+   CORE-SW2   CORE-SW2(config-if)#ipv6 enable
+   CORE-SW2   CORE-SW2(config-if)#interface Vlan50
+   CORE-SW2   CORE-SW2(config-if)#description WLAN VLAN
+   CORE-SW2   CORE-SW2(config-if)#ipv6 address 2001:db8:50::1/64
+   CORE-SW2   CORE-SW2(config-if)#ipv6 enable
+   CORE-SW2   CORE-SW2(config-if)#interface Vlan70
+   CORE-SW2   CORE-SW2(config-if)#description VoIP VLAN
+   CORE-SW2   CORE-SW2(config-if)#ipv6 address 2001:db8:70::1/64
+   CORE-SW2   CORE-SW2(config-if)#ipv6 enable
+   CORE-SW2   CORE-SW2(config-if)#interface Vlan90
+   CORE-SW2   CORE-SW2(config-if)#description Inside Servers
+   CORE-SW2   CORE-SW2(config-if)#ipv6 address 2001:db8:90::1/64
+   CORE-SW2   CORE-SW2(config-if)#ipv6 address 2001:db8:90::1/64
+   CORE-SW2   CORE-SW2(config-if)#ipv6 enable
+   CORE-SW1   CORE-SW1>en
+   CORE-SW1   CORE-SW1#conf to
+   CORE-SW1   CORE-SW1#conf t
+   CORE-SW1   CORE-SW1(config)#pv6 unicast-routing
+   CORE-SW1   CORE-SW1(config)#ipv6 dhcp pool DHCPV6-LAN
+   CORE-SW1   CORE-SW1(config-dhcpv6)#address prefix 2001:db8:20::/64
+   CORE-SW1   CORE-SW1(config-dhcpv6)#dns-server 2001:db8:90::53
+   CORE-SW1   CORE-SW1(config-dhcpv6)#domain-name company.local
+   CORE-SW1   CORE-SW1(config-dhcpv6)#interface Vlan20
+   CORE-SW1   CORE-SW1(config-if)#ipv6 address 2001:db8:20::1/64
+   CORE-SW1   CORE-SW1(config-if)#ipv6 dhcp server DHCPV6-LAN
+   CORE-SW1   CORE-SW1(config-if)#ipv6 nd managed-config-flag
+   HR-SW   HL-SW>enable
+   HR-SW   HL-SW#configure terminal
+   HR-SW   HL-SW(config)#interface FastEthernet0/1
+   HR-SW   HL-SW(config-if)#pv6 unicast-routing
+   HR-SW   HL-SW(config-if)#ipv6 dhcp pool DHCPV6-LAN
+   HR-SW   HL-SW(config-if)#address prefix 2001:db8:20::/64
+   HR-SW   HL-SW(config-if)#dns-server 2001:db8:90::53
+   HR-SW   HL-SW(config-if)#domain-name company.local
+   HR-SW   HL-SW(config-if)#interface Vlan20
+   HR-SW   HL-SW(config-if)#ipv6 address 2001:db8:20::1/64
+   HR-SW   HL-SW(config-if)#ipv6 dhcp server DHCPV6-LAN
+   HR-SW   HL-SW(config-if)#ipv6 nd managed-config-flag
+   CORE-SW2   CORE-SW2>en
+   CORE-SW2   CORE-SW2#pv6 unicast-routing
+   CORE-SW2   CORE-SW2#ipv6 dhcp pool DHCPV6-LAN
+   CORE-SW2   CORE-SW2#address prefix 2001:db8:20::/64
+   CORE-SW2   CORE-SW2#dns-server 2001:db8:90::53
+   CORE-SW2   CORE-SW2#domain-name company.local
+   CORE-SW2   CORE-SW2#interface Vlan20
+   CORE-SW2   CORE-SW2#ipv6 address 2001:db8:20::1/64
+   CORE-SW2   CORE-SW2#ipv6 dhcp server DHCPV6-LAN
+   CORE-SW2   CORE-SW2#ipv6 nd managed-config-flag
+   CORE-SW2   CORE-SW2#ipv6 dhcp pool DHCPV6-LAN
+   CORE-SW2   CORE-SW2#address prefix 2001:db8:20::/64
+   CORE-SW2   CORE-SW2#dns-server 2001:db8:90::53
+   CORE-SW2   CORE-SW2#domain-name company.local
+   CORE-SW2   CORE-SW2#interface Vlan20
+   CORE-SW2   CORE-SW2#ipv6 address 2001:db8:20::1/64
+   CORE-SW2   CORE-SW2#ipv6 dhcp server DHCPV6-LAN
+   CORE-SW2   CORE-SW2#ipv6 nd managed-config-flag
+   CORE-SW2   CORE-SW2#conf to
+   CORE-SW2   CORE-SW2#conf t
+   CORE-SW2   CORE-SW2(config)#ipv6 dhcp pool DHCPV6-LAN
+   CORE-SW2   CORE-SW2(config-dhcpv6)#address prefix 2001:db8:20::/64
+   CORE-SW2   CORE-SW2(config-dhcpv6)#dns-server 2001:db8:90::53
+   CORE-SW2   CORE-SW2(config-dhcpv6)#domain-name company.local
+   CORE-SW2   CORE-SW2(config-dhcpv6)#interface Vlan20
+   CORE-SW2   CORE-SW2(config-if)#ipv6 address 2001:db8:20::1/64
+   CORE-SW2   CORE-SW2(config-if)#ipv6 dhcp server DHCPV6-LAN
+   CORE-SW2   CORE-SW2(config-if)#ipv6 nd managed-config-flag
+   HR-SW   HL-SW>enable
+   HR-SW   HL-SW#configure terminal
+   CORE-SW1   CORE-SW1>conf t
+   CORE-SW1   CORE-SW1>en
+   CORE-SW1   CORE-SW1#conf to
+   CORE-SW1   CORE-SW1#conf t
+   CORE-SW1   CORE-SW1(config)#ipv6 router ospf 1
+   CORE-SW1   CORE-SW1(config-rtr)#router-id 2.2.2.2
+   CORE-SW1   CORE-SW1(config-rtr)#interface GigabitEthernet0/0.10
+   CORE-SW1   CORE-SW1(config)#ipv6 ospf 1 area 0
+   CORE-SW1   CORE-SW1(config)#interface GigabitEthernet0/0.20
+   CORE-SW1   CORE-SW1(config)#ipv6 ospf 1 area 0
+   CORE-SW1   CORE-SW1(config)#interface Serial0/0/0
+   CORE-SW1   CORE-SW1(config)#ipv6 ospf 1 area 0
+   CORE-SW1   CORE-SW1(config)#ipv6 ospf1 area 0
+   Router4   Router>enable
+   Router4   Router#configure terminal
+   Router4   Router(config)#router rip
+   Router4   Router(config-router)#end
+   Router4   Router#configure terminal
+   Router4   Router(config)#interface GigabitEthernet0/0
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/1
+   Router4   Router(config-if)#exit
+   Router4   Router(config)#interface GigabitEthernet0/2
+   SEACOM-ISP   Router>en
+   SEACOM-ISP   Router#conf t
+   SEACOM-ISP   Router(config)#enable password 
+   SEACOM-ISP   Router(config)#enable password  infraworks123
+   SEACOM-ISP   Router(config)#enable secret infraworks123
+   SAFARICOM-ISP   Router>en
+   SAFARICOM-ISP   Router#conf t
+   SAFARICOM-ISP   Router(config)#enable secret infraworks123
+   SAFARICOM-ISP   Router(config)#enable password infraworks123
+   SAFARICOM-ISP   Router(config)#enable secret infraworks123
+   SAFARICOM-ISP   Router(config)#enable secret infraworks1234
+   SAFARICOM-ISP   Router(config)#enable password infraworks1234
+   SAFARICOM-ISP   Router(config)#enable password Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SAFARICOM-ISP   Router(config)#enable secret Infra143
+   SEACOM-ISP   Router(config)#ex
+   SEACOM-ISP   Router#ex
+   SEACOM-ISP   Router>en
+   SAFARICOM-ISP   Router(config)#ex
+   SAFARICOM-ISP   Router#ex
+   SAFARICOM-ISP   Router>en
+   CORE-SW1   CORE-SW1>en
+   CORE-SW1   CORE-SW1#conf t
+   CORE-SW1   CORE-SW1(config)#enable password Infra1432
+   CORE-SW1   CORE-SW1(config)#enable secret Infra1432
+   CORE-SW1   CORE-SW1#ex
+   CORE-SW1   CORE-SW1>conf t
+   CORE-SW1   CORE-SW1>ex
+   CORE-SW1   CORE-SW1>en
+   CORE-SW1   CORE-SW1>en
+   CORE-SW2   CORE-SW2>en
+   CORE-SW2   CORE-SW2#conf t
+   CORE-SW2   CORE-SW2(config)#enable password Infra1433
+   CORE-SW2   CORE-SW2(config)#enable secret Infra1433
+   CORE-SW2   CORE-SW2(config)#ex
+   CORE-SW2   CORE-SW2#ex
+   CORE-SW2   CORE-SW2>conf t
+   CORE-SW2   CORE-SW2>en
+   CORE-SW1   CORE-SW1#ex
+   Router4   Router>enable
+   Router4   Router#configure terminal
+   Router4   Router(config)#interface GigabitEthernet0/1
+   SEACOM-ISP   Router>en
+   CORE-SW1   CORE-SW1>en
+   CORE-SW1   CORE-SW1#config t
